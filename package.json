@@ -1,0 +1,83 @@
+{
+  "name": "@yeonjoong/pulse",
+  "version": "1.4.1",
+  "description": "Keeping the pulse of your APIs under watch.",
+  "author": "Kim YeonJoong <duswnd25@gmail.com> (https://yeonjoong.dev)",
+  "type": "module",
+  "homepage": "https://github.com/kim-yeonjoong/pulse",
+  "repository": {
+    "url": "git+https://github.com/kim-yeonjoong/pulse.git"
+  },
+  "scripts": {
+    "dev": "jiti lib/index.ts",
+    "build": "tsup",
+    "lint": "eslint lib --config ./eslint.config.mjs --fix",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "pulse": "dist/index.js"
+  },
+  "files": [
+    "!lib",
+    "dist"
+  ],
+  "keywords": [
+    "status",
+    "check",
+    "pulse",
+    "healthcheck"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@libsql/client": "^0.14.0",
+    "commander": "^12.1.0",
+    "confbox": "^0.1.8",
+    "consola": "^3.2.3",
+    "defu": "^6.1.4",
+    "drizzle-orm": "^0.36.4",
+    "es-toolkit": "^1.27.0",
+    "ky": "^1.7.2",
+    "ora": "^8.1.1",
+    "ufo": "^1.5.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.0",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.16.0",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.10.1",
+    "@vitest/coverage-v8": "^2.1.6",
+    "eslint": "9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-sonarjs": "^2.0.4",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.4.1",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.4.1",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0",
+    "vitest": "^2.1.6"
+  },
+  "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
+}

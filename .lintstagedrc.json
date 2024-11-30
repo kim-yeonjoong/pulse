@@ -1,0 +1,4 @@
+{
+  "*.{js,ts}": "eslint --fix && vitest related --run",
+  "*.{json,md}": "prettier --write"
+}

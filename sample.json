@@ -1,0 +1,17 @@
+{
+  "title": "Pulse sample",
+  "checks": [
+    {
+      "name": "GitHub Home",
+      "type": "http",
+      "host": "https://github.com",
+      "expectedCode": 200
+    },
+    {
+      "name": "GitHub API",
+      "type": "http",
+      "host": "https://api.github.com",
+      "expectedCode": 200
+    }
+  ]
+}

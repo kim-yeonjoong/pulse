@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+.pnpm-debug.log*
+
+# Coverage
+coverage
+
+# Dependency directories
+node_modules/
+
+# Optional eslint cache
+.eslintcache
+
+# Env
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Build
+dist
+
+# IntelliJ
+.idea
+
+fixtures
+pulse.sqlite
+pulse.json
