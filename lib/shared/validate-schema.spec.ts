@@ -5,7 +5,7 @@ const DUMMY = {
   title: 'Test Service',
   baseUrl: 'https://example.com',
   baseHeaders: {
-    Authorization: 'Bearer token',
+    'x-library-name': 'pulse',
   },
   checks: [
     {
@@ -54,7 +54,7 @@ describe.concurrent('SourceFileSchema', () => {
     it('title 이 없으면 실패해야 한다', () => {
       const result = SourceFileSchema.safeParse({
         baseUrl: 'https://example.com',
-        baseHeaders: { Authorization: 'Bearer token' },
+        baseHeaders: { 'x-library-name': 'pulse' },
         checks: [
           {
             type: 'http',
@@ -70,7 +70,7 @@ describe.concurrent('SourceFileSchema', () => {
       const result = SourceFileSchema.safeParse({
         title: 'Test Service',
         baseUrl: 'https://example.com',
-        baseHeaders: { Authorization: 'Bearer token' },
+        baseHeaders: { 'x-library-name': 'pulse' },
       });
       expect(result.success).toBe(false);
     });
@@ -79,7 +79,7 @@ describe.concurrent('SourceFileSchema', () => {
       const result = SourceFileSchema.safeParse({
         title: 'Test Service',
         baseUrl: 'https://example.com',
-        baseHeaders: { Authorization: 'Bearer token' },
+        baseHeaders: { 'x-library-name': 'pulse' },
         checks: [
           {
             name: 'Health Check',
@@ -94,7 +94,7 @@ describe.concurrent('SourceFileSchema', () => {
       const result = SourceFileSchema.safeParse({
         title: 'Test Service',
         baseUrl: 'https://example.com',
-        baseHeaders: { Authorization: 'Bearer token' },
+        baseHeaders: { 'x-library-name': 'pulse' },
         checks: [
           {
             type: 'http',
@@ -109,7 +109,7 @@ describe.concurrent('SourceFileSchema', () => {
       const result = SourceFileSchema.safeParse({
         title: 'Test Service',
         baseUrl: 'https://example.com',
-        baseHeaders: { Authorization: 'Bearer token' },
+        baseHeaders: { 'x-library-name': 'pulse' },
         checks: [
           {
             type: 'http',
