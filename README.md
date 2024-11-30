@@ -7,13 +7,13 @@
 1. To run Pulse CLI from your project directory, use the following command:
 
 ```shell
-  pnpm dlx @yeonjoong/pulse [<path>] [options]
+pnpm dlx @yeonjoong/pulse [<path>] [options]
 ```
 
 2. Example of a basic execution:
 
 ```shell
-  pnpm dlx @yeonjoong/pulse
+pnpm dlx @yeonjoong/pulse
 ```
 
 ---
@@ -21,7 +21,7 @@
 ## Command Structure
 
 ```shell
-  pnpm dlx @yeonjoong/pulse [options] [<path>]
+pnpm dlx @yeonjoong/pulse [options] [<path>]
 ```
 
 - `<path>`: Specifies the source file directory or file path.
@@ -195,40 +195,40 @@ The source file must follow the structure validated by the schema below:
 1. Run with default options:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse
+pnpm dlx @yeonjoong/pulse
 ```
 
 2. Specify a custom source file path and output path:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse ./my-source.json -o ./output-data.sqlite
+pnpm dlx @yeonjoong/pulse ./my-source.json -o ./output-data.sqlite
 ```
 
 3. Use environment variables:
 
 ```bash
-  export PULSE_OUTPUT_PATH=./my-output.sqlite && pnpm dlx @yeonjoong/pulse
+export PULSE_OUTPUT_PATH=./my-output.sqlite && pnpm dlx @yeonjoong/pulse
 ```
 
 4. Adjust file concurrency and execution concurrency:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse -c 10 -e 100
+pnpm dlx @yeonjoong/pulse -c 10 -e 100
 ```
 
 5. Export to JSON format:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse --json
+pnpm dlx @yeonjoong/pulse --json
 ```
 
 6. Replace keys in a source file using environment variables
 
 ```bash
-  export PULSE_API_HOST=https://example.com/api
-  export PULSE_API_KEY=my-secret-key
-  export PULSE_USERNAME=yeonjoong
-  pnpm dlx @yeonjoong/pulse ./sample.json
+export PULSE_API_HOST=https://example.com/api
+export PULSE_API_KEY=my-secret-key
+export PULSE_USERNAME=yeonjoong
+pnpm dlx @yeonjoong/pulse ./sample.json
 ```
 
 - If `sample.json` contains:

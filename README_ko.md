@@ -7,13 +7,13 @@
 1. 프로젝트 디렉토리에서 Pulse CLI를 실행하려면 다음 명령어를 사용하세요:
 
 ```shell
-  pnpm dlx @yeonjoong/pulse [<path>] [options]
+pnpm dlx @yeonjoong/pulse [<path>] [options]
 ```
 
 2. 기본 실행 예시:
 
 ```shell
-  pnpm dlx @yeonjoong/pulse
+pnpm dlx @yeonjoong/pulse
 ```
 
 ---
@@ -21,7 +21,7 @@
 ## 명령어 구조
 
 ```shell
-  pnpm dlx @yeonjoong/pulse [options] [<path>]
+pnpm dlx @yeonjoong/pulse [options] [<path>]
 ```
 
 - `<path>`: 소스 파일 디렉토리 또는 파일 경로를 지정합니다.
@@ -195,40 +195,40 @@ checks:
 1. 기본 옵션으로 실행:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse
+pnpm dlx @yeonjoong/pulse
 ```
 
 2. 사용자 지정 소스 파일 경로와 출력 경로 지정:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse ./my-source.json -o ./output-data.sqlite
+pnpm dlx @yeonjoong/pulse ./my-source.json -o ./output-data.sqlite
 ```
 
 3. 환경 변수 사용:
 
 ```bash
-  export PULSE_OUTPUT_PATH=./my-output.sqlite && pnpm dlx @yeonjoong/pulse
+export PULSE_OUTPUT_PATH=./my-output.sqlite && pnpm dlx @yeonjoong/pulse
 ```
 
 4. 파일 동시 처리와 실행 동시성 조정:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse -c 10 -e 100
+pnpm dlx @yeonjoong/pulse -c 10 -e 100
 ```
 
 5. JSON 파일로 내보내기:
 
 ```bash
-  pnpm dlx @yeonjoong/pulse --json
+pnpm dlx @yeonjoong/pulse --json
 ```
 
 6환경 변수를 사용하여 소스 파일의 키 대체하기
 
 ```bash
-  export PULSE_API_HOST=https://example.com/api
-  export PULSE_API_KEY=my-secret-key
-  export PULSE_USERNAME=yeonjoong
-  pnpm dlx @yeonjoong/pulse ./sample.json
+export PULSE_API_HOST=https://example.com/api
+export PULSE_API_KEY=my-secret-key
+export PULSE_USERNAME=yeonjoong
+pnpm dlx @yeonjoong/pulse ./sample.json
 ```
 
 - `sample.json`에 다음과 같은 내용이 있는 경우:
