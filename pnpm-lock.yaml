@@ -28,7 +28,7 @@ importers:
         version: 0.36.4(@libsql/client@0.14.0)(@types/better-sqlite3@7.6.12)(better-sqlite3@11.6.0)
       es-toolkit:
         specifier: ^1.27.0
-        version: 1.27.0
+        version: 1.28.0
       ky:
         specifier: ^1.7.2
         version: 1.7.2
@@ -2115,8 +2115,8 @@ packages:
     resolution: {integrity: sha512-QCOllgZJtaUo9miYBcLChTUaHNjJF3PYs1VidD7AwiEj1kYxKeQTctLAezAOH5ZKRH0g2IgPn6KwB4IT8iRpvA==}
     engines: {node: '>= 0.4'}
 
-  es-toolkit@1.27.0:
-    resolution: {integrity: sha512-ETSFA+ZJArcuSCpzD2TjAy6UHpx4E4uqFsoDg9F/nTLogrLmVVZQ+zNxco5h7cWnA1nNak07IXsLcaSMih+ZPQ==}
+  es-toolkit@1.28.0:
+    resolution: {integrity: sha512-CxyuOl9b2CoaOOR+J8mrEIbWlD5NuDQ8IFh+mcS5jBecPfyYTz7dY1mPk7qaIEY+lauiRtrUs7yHfzLKw8AFNA==}
 
   esbuild@0.24.0:
     resolution: {integrity: sha512-FuLPevChGDshgSicjisSooU0cemp/sGXR841D5LHMB7mTVOmsEHcAxaH3irL53+8YDIeVNQEySh4DaYU/iuPqQ==}
@@ -2825,6 +2825,7 @@ packages:
 
   libsql@0.4.7:
     resolution: {integrity: sha512-T9eIRCs6b0J1SHKYIvD8+KCJMcWZ900iZyxdnSCdqxN12Z1ijzT+jY5nrk72Jw4B0HGzms2NgpryArlJqvc3Lw==}
+    cpu: [x64, arm64, wasm32]
     os: [darwin, linux, win32]
 
   lilconfig@3.1.2:
@@ -6175,7 +6176,7 @@ snapshots:
       is-date-object: 1.0.5
       is-symbol: 1.0.4
 
-  es-toolkit@1.27.0: {}
+  es-toolkit@1.28.0: {}
 
   esbuild@0.24.0:
     optionalDependencies:
