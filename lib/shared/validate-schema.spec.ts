@@ -5,7 +5,7 @@ const DUMMY = {
   title: 'Test Service',
   baseUrl: 'https://example.com',
   baseHeaders: {
-    Authorization: 'Bearer token',
+    'x-library-name': 'pulse',
   },
   checks: [
     {
