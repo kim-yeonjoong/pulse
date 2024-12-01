@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/kim-yeonjoong/pulse/compare/v1.0.2...v1.0.3) (2024-12-01)
+
+
+### Bug Fixes
+
+* tsup 설정에 minify 옵션 추가 ([#16](https://github.com/kim-yeonjoong/pulse/issues/16)) ([1c87404](https://github.com/kim-yeonjoong/pulse/commit/1c8740408c1dafd0ab82374ed3792d85daa21ff8))
+
 ## [1.0.2](https://github.com/kim-yeonjoong/pulse/compare/v1.0.1...v1.0.2) (2024-11-30)
 
 
