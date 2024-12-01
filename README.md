@@ -1,3 +1,15 @@
+![NPM Version](https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/kim-yeonjoong/pulse?style=for-the-badge&logo=npm)
+![NPM Downloads](https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm)
+
+
+![Codecov](https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov)
+
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE)
+
+![NPM License](https://img.shields.io/npm/l/@yeonjoong/pulse?style=for-the-badge)
+
 # Pulse CLI Usage Guide
 
 **Pulse** is a CLI tool for monitoring the status of your APIs.
