@@ -21,10 +21,35 @@ jobs:
         with:
           release-type: node
 
-  post-release:
-    needs: release-please
-    runs-on: ubuntu-latest
+  test:
     if: ${{ needs.release-please.outputs.release_created }}
+    needs: release-please
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - run: pnpm install
+      - run: pnpm lint
+      - run: pnpm test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  publish:
+    needs: [release-please, test]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -42,7 +67,6 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - run: pnpm install
-      - run: pnpm test
       - run: pnpm build
       - run: npm publish --access public --provenance
         env:
