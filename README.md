@@ -1,9 +1,10 @@
+![Node Current](https://img.shields.io/node/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=nodedotjs)
 ![NPM Version](https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/kim-yeonjoong/pulse?style=for-the-badge&logo=npm)
 ![NPM Downloads](https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm)
 
-
+[![Known Vulnerabilities](https://snyk.io/test/github/kim-yeonjoong/pulse/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kim-yeonjoong/pulse?targetFile=package.json)
 ![Codecov](https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov)
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/kim-yeonjoong/pulse?style=for-the-badge&logo=codeclimate)
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE)
