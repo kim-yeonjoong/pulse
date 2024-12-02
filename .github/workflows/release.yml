@@ -78,7 +78,7 @@ jobs:
           if [ "${{ matrix.registry }}" == "npm" ]; then
             npm publish --access public --provenance
           else
-            npm publish --registry https://npm.pkg.github.com --provenance
+            npm publish --registry https://npm.pkg.github.com --access public --provenance
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
