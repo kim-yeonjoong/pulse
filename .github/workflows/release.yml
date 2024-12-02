@@ -50,11 +50,6 @@ jobs:
   publish:
     needs: [release-please, test]
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        registry:
-          - npm
-          - github
     steps:
       - uses: actions/checkout@v4
 
@@ -67,19 +62,12 @@ jobs:
         with:
           node-version: 22
           cache: 'pnpm'
-          registry-url: ${{ matrix.registry == 'npm' && 'https://registry.npmjs.org' || 'https://npm.pkg.github.com' }}
+          registry-url: https://registry.npmjs.org
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - run: pnpm install
       - run: pnpm build
-      - run: |
-          if [ "${{ matrix.registry }}" == "npm" ]; then
-            npm publish --access public --provenance
-          else
-            npm publish --registry https://npm.pkg.github.com --access public --provenance
-          fi
+      - run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
