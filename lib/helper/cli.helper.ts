@@ -17,7 +17,10 @@ export const initCli = (): CliOptions => {
       new Option('-m, --max <number>', 'max count of status logs')
         .default(100)
         .env('PULSE_STATUS_LOGS_MAX')
-        .argParser((value) => Number.parseInt(value, 10)),
+        .argParser((value) => {
+          const temporary = Number.parseInt(value, 10);
+          return Number.isNaN(temporary) ? 100 : temporary;
+        }),
     )
     .addOption(
       new Option('-o, --out <file-path>', 'output file path')
@@ -31,7 +34,10 @@ export const initCli = (): CliOptions => {
       )
         .default(5)
         .env('PULSE_FILE_CONCURRENCY')
-        .argParser((value) => Number.parseInt(value, 10)),
+        .argParser((value) => {
+          const temporary = Number.parseInt(value, 10);
+          return Number.isNaN(temporary) ? 5 : temporary;
+        }),
     )
     .addOption(
       new Option(
@@ -40,7 +46,10 @@ export const initCli = (): CliOptions => {
       )
         .default(50)
         .env('PULSE_EXECUTE_CONCURRENCY')
-        .argParser((value) => Number.parseInt(value, 10)),
+        .argParser((value) => {
+          const temporary = Number.parseInt(value, 10);
+          return Number.isNaN(temporary) ? 50 : temporary;
+        }),
     )
     .addOption(new Option('--json', 'Export current result to json file'))
     .parse(process.argv);
