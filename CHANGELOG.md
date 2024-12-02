@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/kim-yeonjoong/pulse/compare/v1.0.3...v1.0.4) (2024-12-02)
+
+
+### Bug Fixes
+
+* **deps:** update node.js to v22.11.0 ([#20](https://github.com/kim-yeonjoong/pulse/issues/20)) ([a0af53d](https://github.com/kim-yeonjoong/pulse/commit/a0af53dbe03cc8fba34dac9e6212e73714fbb0cf))
+
 ## [1.0.3](https://github.com/kim-yeonjoong/pulse/compare/v1.0.2...v1.0.3) (2024-12-01)
 
 
