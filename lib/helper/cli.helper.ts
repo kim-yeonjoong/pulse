@@ -55,6 +55,6 @@ export const initCli = (): CliOptions => {
     OUTPUT_FILE_PATH: path.resolve(currentPath, String(options.out)),
     FILE_CONCURRENCY: Number(options.concurrency),
     EXECUTE_CONCURRENCY: Number(options.executeConcurrency),
-    EXPORT_JSON: options.json,
+    EXPORT_JSON: !!options.json,
   };
 };
