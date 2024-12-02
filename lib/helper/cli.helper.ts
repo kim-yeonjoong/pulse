@@ -1,11 +1,10 @@
 import { Argument, Command, Option } from 'commander';
 import path from 'node:path';
 
-const program = new Command();
-
 const DEFAULT_PATH = './';
 
 export const initCli = (): CliOptions => {
+  const program = new Command();
   program
     .name('pulse')
     .description('Keeping the pulse of your APIs under watch.')
