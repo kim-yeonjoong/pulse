@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/kim-yeonjoong/pulse/compare/v1.0.4...v1.0.5) (2024-12-03)
+
+
+### Bug Fixes
+
+* command 를 매 호출 시 재생성 하도록 수정, number 가 아닌 경우 기본 값 사용하도록 변경 ([577a6b8](https://github.com/kim-yeonjoong/pulse/commit/577a6b850bcc18f2911784cf81189d15f770851b))
+
 ## [1.0.4](https://github.com/kim-yeonjoong/pulse/compare/v1.0.3...v1.0.4) (2024-12-02)
 
 
