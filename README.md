@@ -1,15 +1,39 @@
-![Node Current](https://img.shields.io/node/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=nodedotjs)
-![NPM Version](https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm)
-![NPM Downloads](https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm)
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+  <!-- Node Current -->
+  <img src="https://img.shields.io/node/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=nodedotjs" alt="Node Current">
 
-[![Known Vulnerabilities](https://snyk.io/test/github/kim-yeonjoong/pulse/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kim-yeonjoong/pulse?targetFile=package.json)
-![Codecov](https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov)
-![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/kim-yeonjoong/pulse?style=for-the-badge&logo=codeclimate)
+  <!-- NPM Version -->
+  <img src="https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm" alt="NPM Version">
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE)
+  <!-- NPM Downloads -->
+  <img src="https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm" alt="NPM Downloads">
 
-![NPM License](https://img.shields.io/npm/l/@yeonjoong/pulse?style=for-the-badge)
+  <!-- Known Vulnerabilities -->
+  <a href="https://snyk.io/test/github/kim-yeonjoong/pulse?targetFile=package.json">
+    <img src="https://snyk.io/test/github/kim-yeonjoong/pulse/badge.svg?targetFile=package.json" alt="Known Vulnerabilities">
+  </a>
+
+  <!-- Codecov -->
+  <img src="https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov" alt="Codecov">
+
+  <!-- Code Climate maintainability -->
+  <img src="https://img.shields.io/codeclimate/maintainability/kim-yeonjoong/pulse?style=for-the-badge&logo=codeclimate" alt="Code Climate maintainability">
+
+  <!-- GitHub Actions Test Status -->
+  <img src="https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST" alt="GitHub Actions Workflow Status - Test">
+
+  <!-- GitHub Actions Release Status -->
+  <img src="https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE" alt="GitHub Actions Workflow Status - Release">
+
+  <!-- NPM License -->
+  <img src="https://img.shields.io/npm/l/@yeonjoong/pulse?style=for-the-badge" alt="NPM License">
+</div>
+
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+    <a href="/pulse/blob/main/README.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">English</a>
+    &nbsp;|&nbsp;
+    <a href="/pulse/blob/main/README_ko.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">한국어</a>
+</div>
 
 # Pulse CLI Usage Guide
 

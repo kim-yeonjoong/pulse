@@ -1,15 +1,39 @@
-![Node Current](https://img.shields.io/node/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=nodedotjs)
-![NPM Version](https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm)
-![NPM Downloads](https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm)
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+  <!-- Node Current -->
+  <img src="https://img.shields.io/node/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=nodedotjs" alt="Node Current">
 
-[![Known Vulnerabilities](https://snyk.io/test/github/kim-yeonjoong/pulse/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kim-yeonjoong/pulse?targetFile=package.json)
-![Codecov](https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov)
-![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/kim-yeonjoong/pulse?style=for-the-badge&logo=codeclimate)
+  <!-- NPM Version -->
+  <img src="https://img.shields.io/npm/v/%40yeonjoong%2Fpulse?style=for-the-badge&logo=npm" alt="NPM Version">
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE)
+  <!-- NPM Downloads -->
+  <img src="https://img.shields.io/npm/dw/@yeonjoong/pulse?style=for-the-badge&logo=npm" alt="NPM Downloads">
 
-![NPM License](https://img.shields.io/npm/l/@yeonjoong/pulse?style=for-the-badge)
+  <!-- Known Vulnerabilities -->
+  <a href="https://snyk.io/test/github/kim-yeonjoong/pulse?targetFile=package.json">
+    <img src="https://snyk.io/test/github/kim-yeonjoong/pulse/badge.svg?targetFile=package.json" alt="Known Vulnerabilities">
+  </a>
+
+  <!-- Codecov -->
+  <img src="https://img.shields.io/codecov/c/github/kim-yeonjoong/pulse?token=X4MWYF7C3D&style=for-the-badge&logo=codecov" alt="Codecov">
+
+  <!-- Code Climate maintainability -->
+  <img src="https://img.shields.io/codeclimate/maintainability/kim-yeonjoong/pulse?style=for-the-badge&logo=codeclimate" alt="Code Climate maintainability">
+
+  <!-- GitHub Actions Test Status -->
+  <img src="https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/checks.yml?style=for-the-badge&logo=github&label=TEST" alt="GitHub Actions Workflow Status - Test">
+
+  <!-- GitHub Actions Release Status -->
+  <img src="https://img.shields.io/github/actions/workflow/status/kim-yeonjoong/pulse/release.yml?style=for-the-badge&logo=github&label=RELEASE" alt="GitHub Actions Workflow Status - Release">
+
+  <!-- NPM License -->
+  <img src="https://img.shields.io/npm/l/@yeonjoong/pulse?style=for-the-badge" alt="NPM License">
+</div>
+
+<div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
+    <a href="/pulse/blob/main/README.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">English</a>
+    &nbsp;|&nbsp;
+    <a href="/pulse/blob/main/README_ko.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">한국어</a>
+</div>
 
 # Pulse CLI 사용 가이드
 
@@ -38,9 +62,9 @@ pnpm dlx @yeonjoong/pulse [options] [<path>]
 ```
 
 - `<path>`: 소스 파일 디렉토리 또는 파일 경로를 지정합니다.
-    - **기본값**: `./`
-    - `<path>`가 파일인 경우 해당 파일만 처리됩니다.
-    - `<path>`가 디렉토리인 경우 해당 디렉토리와 하위 디렉토리의 모든 파일이 처리됩니다.
+  - **기본값**: `./`
+  - `<path>`가 파일인 경우 해당 파일만 처리됩니다.
+  - `<path>`가 디렉토리인 경우 해당 디렉토리와 하위 디렉토리의 모든 파일이 처리됩니다.
 
 ---
 
@@ -48,27 +72,27 @@ pnpm dlx @yeonjoong/pulse [options] [<path>]
 
 1. 경로 기반 실행:
 
-    - `<path>`가 파일인 경우 해당 파일만 처리됩니다.
-    - `<path>`가 디렉토리인 경우 해당 디렉토리와 하위 디렉토리의 모든 파일이 처리됩니다.
+   - `<path>`가 파일인 경우 해당 파일만 처리됩니다.
+   - `<path>`가 디렉토리인 경우 해당 디렉토리와 하위 디렉토리의 모든 파일이 처리됩니다.
 
 2. 환경 변수 대체:
-    - PULSE_ 접두사를 가진 환경 변수가 설정된 경우, CLI는 소스 파일에서 일치하는 텍스트를 확인합니다.
-    - 환경 변수 대체는 `data` 및 `host` 필드에서만 작동합니다.
-    - 소스 파일의 텍스트가 환경 변수 이름(PULSE_ 접두사)과 일치하면, 해당 값을 환경 변수 값으로 대체합니다.
-    - 예시:
-        - 환경 변수: `PULSE_API_KEY=my-secret-key`
-        - 소스 파일 내용: `{ "API_KEY": "PULSE_API_KEY" }`
-        - 대체 후: `{ "API_KEY": "my-secret-key" }`
+   - PULSE\_ 접두사를 가진 환경 변수가 설정된 경우, CLI는 소스 파일에서 일치하는 텍스트를 확인합니다.
+   - 환경 변수 대체는 `data` 및 `host` 필드에서만 작동합니다.
+   - 소스 파일의 텍스트가 환경 변수 이름(PULSE\_ 접두사)과 일치하면, 해당 값을 환경 변수 값으로 대체합니다.
+   - 예시:
+     - 환경 변수: `PULSE_API_KEY=my-secret-key`
+     - 소스 파일 내용: `{ "API_KEY": "PULSE_API_KEY" }`
+     - 대체 후: `{ "API_KEY": "my-secret-key" }`
 
 ## 옵션
 
-| 옵션                                   | 설명                              | 기본값              | 환경 변수                       |
-|--------------------------------------|---------------------------------|------------------|-----------------------------|
+| 옵션                                 | 설명                                               | 기본값           | 환경 변수                   |
+| ------------------------------------ | -------------------------------------------------- | ---------------- | --------------------------- |
 | `-m, --max <number>`                 | 각 서비스의 상태 로그 최대 개수를 설정합니다.      | `100`            | `PULSE_STATUS_LOGS_MAX`     |
-| `-o, --out <file-path>`              | 출력 파일 경로를 설정합니다.                | `./pulse.sqlite` | `PULSE_OUTPUT_PATH`         |
-| `-c, --concurrency <number>`         | 동시에 처리할 파일 작업 수를 설정합니다.         | `5`              | `PULSE_FILE_CONCURRENCY`    |
-| `-e, --execute-concurrency <number>` | 파일당 상태 확인 요청의 동시 실행 수를 설정합니다.   | `50`             | `PULSE_EXECUTE_CONCURRENCY` |
-| `--json`                             | 결과를 JSON 파일로 내보냅니다 (--out 값 참조) | `false`          |                             |
+| `-o, --out <file-path>`              | 출력 파일 경로를 설정합니다.                       | `./pulse.sqlite` | `PULSE_OUTPUT_PATH`         |
+| `-c, --concurrency <number>`         | 동시에 처리할 파일 작업 수를 설정합니다.           | `5`              | `PULSE_FILE_CONCURRENCY`    |
+| `-e, --execute-concurrency <number>` | 파일당 상태 확인 요청의 동시 실행 수를 설정합니다. | `50`             | `PULSE_EXECUTE_CONCURRENCY` |
+| `--json`                             | 결과를 JSON 파일로 내보냅니다 (--out 값 참조)      | `false`          |                             |
 
 ---
 
@@ -103,15 +127,15 @@ pnpm dlx @yeonjoong/pulse [options] [<path>]
 #### YAML 형식
 
 ```yaml
-title: "Pulse sample"
+title: 'Pulse sample'
 checks:
-  - name: "GitHub Home"
-    type: "http"
-    host: "https://github.com"
+  - name: 'GitHub Home'
+    type: 'http'
+    host: 'https://github.com'
     expectedCode: 200
-  - name: "GitHub API"
-    type: "http"
-    host: "https://api.github.com"
+  - name: 'GitHub API'
+    type: 'http'
+    host: 'https://api.github.com'
     expectedCode: 200
 ```
 
@@ -159,26 +183,26 @@ checks:
 #### 하나의 파일에 여러 서비스 정의 (YAML 형식)
 
 ```yaml
-- title: "Pulse sample"
+- title: 'Pulse sample'
   checks:
-    - name: "GitHub Home"
-      type: "http"
-      host: "https://github.com"
+    - name: 'GitHub Home'
+      type: 'http'
+      host: 'https://github.com'
       expectedCode: 200
-    - name: "GitHub API"
-      type: "http"
-      host: "https://api.github.com"
+    - name: 'GitHub API'
+      type: 'http'
+      host: 'https://api.github.com'
       expectedCode: 200
 
-- title: "Pulse sample 2"
+- title: 'Pulse sample 2'
   checks:
-    - name: "GitHub Home"
-      type: "http"
-      host: "https://github.com"
+    - name: 'GitHub Home'
+      type: 'http'
+      host: 'https://github.com'
       expectedCode: 200
-    - name: "GitHub API"
-      type: "http"
-      host: "https://api.github.com"
+    - name: 'GitHub API'
+      type: 'http'
+      host: 'https://api.github.com'
       expectedCode: 200
 ```
 
@@ -189,8 +213,8 @@ checks:
 #### 서비스 구성
 
 - **`title`**: 서비스의 이름을 나타내는 비어 있지 않은 문자열입니다.
-- **`baseUrl`** *(선택 사항)*: 서비스의 기본 URL입니다. 제공된 경우 검사에 기본값으로 적용될 수 있습니다.
-- **`baseHeaders`** *(선택 사항)*: 서비스 내 모든 HTTP 검사에 적용될 공통 헤더입니다.
+- **`baseUrl`** _(선택 사항)_: 서비스의 기본 URL입니다. 제공된 경우 검사에 기본값으로 적용될 수 있습니다.
+- **`baseHeaders`** _(선택 사항)_: 서비스 내 모든 HTTP 검사에 적용될 공통 헤더입니다.
 - **`checks`**: 검사 구성을 나타내는 배열입니다.
 
 #### 검사 구성
@@ -198,10 +222,10 @@ checks:
 - **`name`**: 검사를 식별하는 비어 있지 않은 문자열입니다.
 - **`type`**: 현재는 `"http"`를 지원합니다.
 - **`host`**: 검사의 대상 URL입니다.
-- **`method`** *(선택 사항)*: HTTP 메서드 (예: GET, POST). 기본값은 `"GET"`입니다.
-- **`data`** *(선택 사항)*: POST나 PUT 메서드의 요청 본문 또는 GET 메서드의 검색 매개변수입니다.
-- **`headers`** *(선택 사항)*: 검사에 특정한 사용자 지정 헤더입니다.
-- **`expectedCode`** *(선택 사항)*: 예상되는 HTTP 상태 코드 (예: 200).
+- **`method`** _(선택 사항)_: HTTP 메서드 (예: GET, POST). 기본값은 `"GET"`입니다.
+- **`data`** _(선택 사항)_: POST나 PUT 메서드의 요청 본문 또는 GET 메서드의 검색 매개변수입니다.
+- **`headers`** _(선택 사항)_: 검사에 특정한 사용자 지정 헤더입니다.
+- **`expectedCode`** _(선택 사항)_: 예상되는 HTTP 상태 코드 (예: 200).
 
 ## 예시
 
@@ -255,7 +279,7 @@ pnpm dlx @yeonjoong/pulse ./sample.json
       "type": "http",
       "method": "post",
       "host": "PULSE_API_HOST/PULSE_API_KEY",
-      "data": { "name" : "PULSE_USERNAME" },
+      "data": { "name": "PULSE_USERNAME" },
       "expectedCode": 201
     }
   ]
@@ -273,7 +297,7 @@ pnpm dlx @yeonjoong/pulse ./sample.json
       "type": "http",
       "method": "post",
       "host": "https://example.com/api/my-secret-key",
-      "data": {"name" : "yeonjoong"},
+      "data": { "name": "yeonjoong" },
       "expectedCode": 201
     }
   ]
