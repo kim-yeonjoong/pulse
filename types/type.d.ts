@@ -22,7 +22,6 @@ declare type Check = HttpCheck | PortCheck;
 
 declare interface ServiceStatusResult {
   name: string;
-  url: string;
   status: boolean;
   response?: unknown;
 }
