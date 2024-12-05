@@ -7,7 +7,7 @@ import {
 import fs from 'node:fs';
 import path from 'node:path';
 import { drizzle } from 'drizzle-orm/libsql';
-import { compareJsonStructure } from '../shared/json-structure-compare';
+import { isJsonStructureEqual } from '../shared/is-json-structure-equal';
 import { Service, Log } from '../schema';
 import { eq } from 'drizzle-orm';
 
@@ -24,18 +24,21 @@ const JSON_RESULT = {
   Pulse: [
     {
       name: 'Service B',
-      response: '"Error"',
+      response: 'undefined',
       logs: [
-        { status: false, timestamp: '2024-12-04 16:02:26' },
-        { status: false, timestamp: '2024-12-04 16:02:26' },
+        { status: false, timestamp: '2024-12-05 02:11:49' },
+        { status: false, timestamp: '2024-12-05 02:11:49' },
+        { status: false, timestamp: '2024-12-05 02:11:49' },
       ],
     },
     {
       name: 'Service A',
       response: '"OK"',
       logs: [
-        { status: true, timestamp: '2024-12-04 16:02:26' },
-        { status: true, timestamp: '2024-12-04 16:02:26' },
+        { status: false, timestamp: '2024-12-05 02:11:49' },
+        { status: true, timestamp: '2024-12-05 02:11:49' },
+        { status: true, timestamp: '2024-12-05 02:11:49' },
+        { status: true, timestamp: '2024-12-05 02:11:49' },
       ],
     },
   ],
@@ -164,6 +167,6 @@ describe.sequential('database.service', () => {
     ) as Record<string, unknown>;
 
     expect(exportedData[DUMMY_SERVICE_NAME]).toHaveLength(2);
-    expect(compareJsonStructure(exportedData, JSON_RESULT)).toBeTruthy();
+    expect(isJsonStructureEqual(exportedData, JSON_RESULT)).toBeTruthy();
   });
 });
