@@ -9,6 +9,7 @@ export default defineConfig({
       exclude: [
         'commitlint.config.js',
         '**/index.ts',
+        'lib/schema/*',
         ...coverageConfigDefaults.exclude,
       ],
     },
