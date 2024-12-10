@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { initCli } from './cli.helper';
 import path from 'node:path';
 
@@ -6,13 +6,15 @@ const mockArgv = (arguments_: string[]) => {
   process.argv = ['node', 'script', ...arguments_];
 };
 
-describe.concurrent('initCli 함수 테스트', () => {
-  it('기본 옵션 값들을 설정해야 한다', () => {
+describe.concurrent('initCli', () => {
+  it('기본 옵션 값들을 설정해야 한다', ({ expect }) => {
+    expect.assertions(1);
+
     mockArgv([]);
     vi.unstubAllEnvs();
     const options = initCli();
 
-    expect(options).toEqual({
+    expect(options).toStrictEqual({
       MAX_STATUS_LOG: 100,
       SOURCE_PATH: path.resolve(process.cwd(), './'),
       OUTPUT_FILE_PATH: path.resolve(process.cwd(), './pulse.sqlite'),
@@ -22,7 +24,9 @@ describe.concurrent('initCli 함수 테스트', () => {
     });
   });
 
-  it('CLI 옵션으로 설정한 값을 반환해야 한다', () => {
+  it('cLI 옵션으로 설정한 값을 반환해야 한다', ({ expect }) => {
+    expect.assertions(1);
+
     mockArgv([
       './src',
       '-m',
@@ -39,7 +43,7 @@ describe.concurrent('initCli 함수 테스트', () => {
 
     const options = initCli();
 
-    expect(options).toEqual({
+    expect(options).toStrictEqual({
       MAX_STATUS_LOG: 200,
       SOURCE_PATH: path.resolve(process.cwd(), './src'),
       OUTPUT_FILE_PATH: path.resolve(process.cwd(), './output.db'),
@@ -49,7 +53,9 @@ describe.concurrent('initCli 함수 테스트', () => {
     });
   });
 
-  it('환경 변수 값을 사용해야 한다', () => {
+  it('환경 변수 값을 사용해야 한다', ({ expect }) => {
+    expect.assertions(1);
+
     mockArgv([]);
     vi.unstubAllEnvs();
     vi.stubEnv('PULSE_STATUS_LOGS_MAX', '300');
@@ -59,7 +65,7 @@ describe.concurrent('initCli 함수 테스트', () => {
 
     const options = initCli();
 
-    expect(options).toEqual({
+    expect(options).toStrictEqual({
       MAX_STATUS_LOG: 300,
       SOURCE_PATH: path.resolve(process.cwd(), './'),
       OUTPUT_FILE_PATH: path.resolve(process.cwd(), './env_output.db'),
@@ -69,7 +75,9 @@ describe.concurrent('initCli 함수 테스트', () => {
     });
   });
 
-  it('숫자가 아닌 값은 기본값으로 대체해야 한다', () => {
+  it('숫자가 아닌 값은 기본값으로 대체해야 한다', ({ expect }) => {
+    expect.assertions(1);
+
     mockArgv([]);
     vi.unstubAllEnvs();
     vi.stubEnv('PULSE_STATUS_LOGS_MAX', 'not-a-number');
@@ -77,7 +85,8 @@ describe.concurrent('initCli 함수 테스트', () => {
     vi.stubEnv('PULSE_EXECUTE_CONCURRENCY', 'not-a-number');
 
     const options = initCli();
-    expect(options).toEqual({
+
+    expect(options).toStrictEqual({
       MAX_STATUS_LOG: 100,
       SOURCE_PATH: path.resolve(process.cwd(), './'),
       OUTPUT_FILE_PATH: path.resolve(process.cwd(), './pulse.sqlite'),

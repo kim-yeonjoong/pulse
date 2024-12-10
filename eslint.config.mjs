@@ -5,10 +5,11 @@ import eslint from '@eslint/js';
 import globals from 'globals';
 import importPlugin from 'eslint-plugin-import';
 import sonarjs from 'eslint-plugin-sonarjs';
+import vitest from '@vitest/eslint-plugin';
 
 export default tsEslint.config(
   {
-    files: ['./lib/**/*.ts'],
+    files: ['lib/**/*.ts'],
   },
   eslint.configs.recommended,
   ...tsEslint.configs.strict,
@@ -19,8 +20,15 @@ export default tsEslint.config(
   sonarjs.configs.recommended,
   prettier,
   {
-    files: ['./lib/**/*.js', './lib/**/*.mjs'],
+    files: ['lib/**/*.js', 'lib/**/*.mjs'],
     ...tsEslint.configs.disableTypeChecked,
+  },
+  {
+    files: ['lib/**/*.test.ts'],
+    ...vitest.configs.all,
+    rules: Object.fromEntries(
+      Object.keys(vitest.configs.all.rules).map((rule) => [rule, 'error']),
+    ),
   },
   {
     languageOptions: {

@@ -30,9 +30,9 @@
 </div>
 
 <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
-    <a href="/pulse/blob/main/README.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">English</a>
+    <a href="/README.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">English</a>
     &nbsp;|&nbsp;
-    <a href="/pulse/blob/main/README_ko.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">한국어</a>
+    <a href="/README_ko.md" style="text-decoration: none; font-weight: bold; color: #0366d6;">한국어</a>
 </div>
 
 # Pulse CLI Usage Guide
@@ -87,7 +87,7 @@ pnpm dlx @yeonjoong/pulse [options] [<path>]
 ## Options
 
 | Option                               | Description                                                   | Default          | Environment Variable        |
-|--------------------------------------|---------------------------------------------------------------|------------------|-----------------------------|
+| ------------------------------------ | ------------------------------------------------------------- | ---------------- | --------------------------- |
 | `-m, --max <number>`                 | Sets the maximum count of each service's status logs.         | `100`            | `PULSE_STATUS_LOGS_MAX`     |
 | `-o, --out <file-path>`              | Sets the output file path.                                    | `./pulse.sqlite` | `PULSE_OUTPUT_PATH`         |
 | `-c, --concurrency <number>`         | Sets the number of concurrent file processing tasks.          | `5`              | `PULSE_FILE_CONCURRENCY`    |
