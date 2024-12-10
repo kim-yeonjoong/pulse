@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.7](https://github.com/kim-yeonjoong/pulse/compare/v1.0.6...v1.0.7) (2024-12-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency drizzle-orm to ^0.38.0 ([#37](https://github.com/kim-yeonjoong/pulse/issues/37)) ([a5ea77c](https://github.com/kim-yeonjoong/pulse/commit/a5ea77cdfd0ff9d7bc1bfac7151facbc50630326))
+* **deps:** update dependency zod to ^3.24.0 ([#39](https://github.com/kim-yeonjoong/pulse/issues/39)) ([55af75b](https://github.com/kim-yeonjoong/pulse/commit/55af75b3dc2c1f1b0d34760e6277849c7c235a45))
+
 ## [1.0.6](https://github.com/kim-yeonjoong/pulse/compare/v1.0.5...v1.0.6) (2024-12-04)
 
 
