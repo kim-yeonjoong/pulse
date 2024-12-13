@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/kim-yeonjoong/pulse/compare/v1.0.8...v1.0.9) (2024-12-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency es-toolkit to ^1.30.0 ([#47](https://github.com/kim-yeonjoong/pulse/issues/47)) ([f03d2d7](https://github.com/kim-yeonjoong/pulse/commit/f03d2d7b38f57c8d572572338094b4f13216598a))
+
 ## [1.0.8](https://github.com/kim-yeonjoong/pulse/compare/v1.0.7...v1.0.8) (2024-12-13)
 
 
