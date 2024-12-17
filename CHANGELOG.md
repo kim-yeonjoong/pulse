@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10](https://github.com/kim-yeonjoong/pulse/compare/v1.0.9...v1.0.10) (2024-12-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency drizzle-orm to ^0.38.2 ([#50](https://github.com/kim-yeonjoong/pulse/issues/50)) ([9344831](https://github.com/kim-yeonjoong/pulse/commit/93448318357e1e7ab8c845e74575c1ccb9fd0574))
+* **deps:** update dependency es-toolkit to ^1.30.1 ([#52](https://github.com/kim-yeonjoong/pulse/issues/52)) ([91788d1](https://github.com/kim-yeonjoong/pulse/commit/91788d1e6d14b33eda0b8990d41855b03446773f))
+
 ## [1.0.9](https://github.com/kim-yeonjoong/pulse/compare/v1.0.8...v1.0.9) (2024-12-13)
 
 
