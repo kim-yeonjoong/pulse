@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/kim-yeonjoong/pulse/compare/v1.0.10...v1.0.11) (2024-12-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ky to ^1.7.4 ([#57](https://github.com/kim-yeonjoong/pulse/issues/57)) ([7a405cd](https://github.com/kim-yeonjoong/pulse/commit/7a405cdfc0071c73c8d40f2706eb728d4802bf19))
+
 ## [1.0.10](https://github.com/kim-yeonjoong/pulse/compare/v1.0.9...v1.0.10) (2024-12-17)
 
 
