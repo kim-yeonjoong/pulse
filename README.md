@@ -37,6 +37,8 @@
 
 # Pulse CLI Usage Guide
 
+C/2024YJ
+
 **Pulse** is a CLI tool for monitoring the status of your APIs.
 
 ## Quick start
