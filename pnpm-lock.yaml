@@ -18,8 +18,8 @@ importers:
         specifier: ^0.1.8
         version: 0.1.8
       consola:
-        specifier: ^3.3.2
-        version: 3.3.2
+        specifier: ^3.3.3
+        version: 3.3.3
       defu:
         specifier: ^6.1.4
         version: 6.1.4
@@ -1614,8 +1614,8 @@ packages:
   confbox@0.1.8:
     resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==}
 
-  consola@3.3.2:
-    resolution: {integrity: sha512-X3dcWPU+QeEaPrdtX3zBRQ0P0kIeEnmJV49uNtpy4N/TPnzA3grJvHftKjHuFIQNLrqBPzzykmc3fNrkQDl5yA==}
+  consola@3.3.3:
+    resolution: {integrity: sha512-Qil5KwghMzlqd51UXM0b6fyaGHtOC22scxrwrz4A2882LyUMwQjnvaedN1HAeXzphspQ6CpHkzMAWxBTUruDLg==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   conventional-changelog-angular@7.0.0:
@@ -5063,7 +5063,7 @@ snapshots:
 
   confbox@0.1.8: {}
 
-  consola@3.3.2: {}
+  consola@3.3.3: {}
 
   conventional-changelog-angular@7.0.0:
     dependencies:
@@ -6639,7 +6639,7 @@ snapshots:
       bundle-require: 5.0.0(esbuild@0.24.0)
       cac: 6.7.14
       chokidar: 4.0.1
-      consola: 3.3.2
+      consola: 3.3.3
       debug: 4.3.7
       esbuild: 0.24.0
       joycon: 3.1.1
