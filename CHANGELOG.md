@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.13](https://github.com/kim-yeonjoong/pulse/compare/v1.0.12...v1.0.13) (2024-12-26)
+
+
+### Bug Fixes
+
+* 표기법 추가 ([#67](https://github.com/kim-yeonjoong/pulse/issues/67)) ([2789917](https://github.com/kim-yeonjoong/pulse/commit/27899170b0de8a12f159f5374d4d274854001896))
+
 ## [1.0.12](https://github.com/kim-yeonjoong/pulse/compare/v1.0.11...v1.0.12) (2024-12-26)
 
 
