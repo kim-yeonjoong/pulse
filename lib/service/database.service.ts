@@ -1,10 +1,10 @@
 import { drizzle } from 'drizzle-orm/libsql';
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 import { isNil } from 'es-toolkit';
 import { stringifyJSON } from 'confbox';
 import { and, desc, eq, inArray, sql } from 'drizzle-orm';
 import fs from 'node:fs';
 import path from 'node:path';
+import { Log, Service } from '../schema';
 
 interface ExportLog {
   status: boolean;
@@ -18,28 +18,6 @@ type ExportJson = Record<
     logs: ExportLog[];
   }[]
 >;
-
-const Service = sqliteTable('service', {
-  id: text('id')
-    .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
-  title: text('title').notNull(),
-  name: text('name').notNull(),
-  last_response: text('last_response'),
-});
-
-const Log = sqliteTable('log', {
-  id: text('id')
-    .primaryKey()
-    .$defaultFn(() => crypto.randomUUID()),
-  service_id: text('service_id')
-    .notNull()
-    .references(() => Service.id),
-  status: integer('status', { mode: 'boolean' }).notNull(),
-  timestamp: integer('timestamp', { mode: 'timestamp' }).default(
-    sql`(current_timestamp)`,
-  ),
-});
 
 export const initDatabase = async (filePath: string) => {
   const database = drizzle(`file:${filePath}`);
@@ -158,7 +136,8 @@ export const exportLatestResult = async ({
     })
     .from(Service)
     .leftJoin(Log, eq(Log.service_id, Service.id))
-    .groupBy(Service.title, Service.id);
+    .groupBy(Service.title, Service.id)
+    .orderBy(desc(Service.title));
 
   const exportResult: ExportJson = {};
 
@@ -169,8 +148,8 @@ export const exportLatestResult = async ({
 
     exportResult[row.title].push({
       name: row.name,
-      response: row.lastResponse || '',
-      logs: (JSON.parse(String(row.logs || '[]')) as ExportLog[]).map(
+      response: String(row.lastResponse),
+      logs: (JSON.parse(String(row.logs)) as ExportLog[]).map(
         (log: ExportLog) => ({ ...log, status: String(log.status) === 'true' }),
       ),
     });
