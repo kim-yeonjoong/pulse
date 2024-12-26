@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.12](https://github.com/kim-yeonjoong/pulse/compare/v1.0.11...v1.0.12) (2024-12-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency consola to ^3.3.2 ([#61](https://github.com/kim-yeonjoong/pulse/issues/61)) ([a45c98f](https://github.com/kim-yeonjoong/pulse/commit/a45c98fbbd6077343d339737b9069877af537006))
+* **deps:** update dependency consola to ^3.3.3 ([#65](https://github.com/kim-yeonjoong/pulse/issues/65)) ([946e988](https://github.com/kim-yeonjoong/pulse/commit/946e98883375406bd67d7e01ace9ab18e225ec31))
+* **deps:** update dependency drizzle-orm to ^0.38.3 ([#63](https://github.com/kim-yeonjoong/pulse/issues/63)) ([e438fc6](https://github.com/kim-yeonjoong/pulse/commit/e438fc6c2a14e7b2ac99ae1216487931ad7d39bd))
+
 ## [1.0.11](https://github.com/kim-yeonjoong/pulse/compare/v1.0.10...v1.0.11) (2024-12-19)
 
 
