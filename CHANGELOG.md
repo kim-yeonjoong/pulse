@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.15](https://github.com/kim-yeonjoong/pulse/compare/v1.0.14...v1.0.15) (2025-01-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to v13 ([#74](https://github.com/kim-yeonjoong/pulse/issues/74)) ([0cd7977](https://github.com/kim-yeonjoong/pulse/commit/0cd79774d495c02b2c1d9293a96a0c8cf2015704))
+* **deps:** update dependency consola to ^3.4.0 ([#89](https://github.com/kim-yeonjoong/pulse/issues/89)) ([ee96a5c](https://github.com/kim-yeonjoong/pulse/commit/ee96a5cac87bb90b150a7cca299e68c0bde3a7a5))
+
 ## [1.0.14](https://github.com/kim-yeonjoong/pulse/compare/v1.0.13...v1.0.14) (2024-12-31)
 
 
