@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.16](https://github.com/kim-yeonjoong/pulse/compare/v1.0.15...v1.0.16) (2025-01-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency drizzle-orm to ^0.38.4 ([#93](https://github.com/kim-yeonjoong/pulse/issues/93)) ([086c5f2](https://github.com/kim-yeonjoong/pulse/commit/086c5f2180cf238ac54eadf50d4bad82a05d7eb8))
+
 ## [1.0.15](https://github.com/kim-yeonjoong/pulse/compare/v1.0.14...v1.0.15) (2025-01-15)
 
 
