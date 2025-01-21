@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.17](https://github.com/kim-yeonjoong/pulse/compare/v1.0.16...v1.0.17) (2025-01-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to ^13.1.0 ([#98](https://github.com/kim-yeonjoong/pulse/issues/98)) ([43a3c5b](https://github.com/kim-yeonjoong/pulse/commit/43a3c5bb1e8a9a33fdb1fc36d514a02accc70d6d))
+
 ## [1.0.16](https://github.com/kim-yeonjoong/pulse/compare/v1.0.15...v1.0.16) (2025-01-18)
 
 
