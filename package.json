@@ -44,7 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "@libsql/client": "^0.14.0",
-    "commander": "^13.0.0",
+    "commander": "^13.1.0",
     "confbox": "^0.1.8",
     "consola": "^3.4.0",
     "defu": "^6.1.4",
