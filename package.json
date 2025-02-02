@@ -48,7 +48,7 @@
     "confbox": "^0.1.8",
     "consola": "^3.4.0",
     "defu": "^6.1.4",
-    "drizzle-orm": "^0.39.0",
+    "drizzle-orm": "^0.39.1",
     "es-toolkit": "^1.32.0",
     "ky": "^1.7.4",
     "ora": "^8.1.1",
