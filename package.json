@@ -1,6 +1,6 @@
 {
   "name": "@yeonjoong/pulse",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Keeping the pulse of your APIs under watch.",
   "author": "Kim YeonJoong <duswnd25@gmail.com> (https://yeonjoong.dev)",
   "type": "module",
@@ -56,8 +56,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
-    "@commitlint/config-conventional": "^19.7.1",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.19.0",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/eslint__js": "^8.42.3",
