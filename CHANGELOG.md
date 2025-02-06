@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.19](https://github.com/kim-yeonjoong/pulse/compare/v1.0.18...v1.0.19) (2025-02-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency drizzle-orm to ^0.39.1 ([#111](https://github.com/kim-yeonjoong/pulse/issues/111)) ([37d29f6](https://github.com/kim-yeonjoong/pulse/commit/37d29f69acb5ce78a4faaf19b4ca6c3b61e88c07))
+* **deps:** update dependency drizzle-orm to ^0.39.2 ([#121](https://github.com/kim-yeonjoong/pulse/issues/121)) ([0badec3](https://github.com/kim-yeonjoong/pulse/commit/0badec3bf57ff350a10e64ff652fbcc75d1dedd0))
+* **deps:** update dependency es-toolkit to ^1.32.0 ([#112](https://github.com/kim-yeonjoong/pulse/issues/112)) ([d7f2ff2](https://github.com/kim-yeonjoong/pulse/commit/d7f2ff2e6d67b22a694c7af8f9797374c0a84689))
+* **deps:** update dependency ora to ^8.2.0 ([#114](https://github.com/kim-yeonjoong/pulse/issues/114)) ([aca8e2e](https://github.com/kim-yeonjoong/pulse/commit/aca8e2e969ff6b1a35d311a7ebf5a1798d59d6e6))
+
 ## [1.0.18](https://github.com/kim-yeonjoong/pulse/compare/v1.0.17...v1.0.18) (2025-01-28)
 
 
