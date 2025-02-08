@@ -1,7 +1,7 @@
 import { exportLatestResult, initDatabase } from './service';
 import { chunk } from 'es-toolkit';
 import { execute } from './processor';
-import consola from 'consola';
+import { consola } from 'consola';
 import { getSourceFilePaths, initCli } from './helper';
 import * as process from 'node:process';
 import { getSpinnerInstance } from './shared/spinner';
