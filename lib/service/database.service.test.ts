@@ -20,7 +20,6 @@ const DUMMY_PULSE_CHECK_RESULTS = [
 ];
 
 describe.sequential('database.service', () => {
-  // eslint-disable-next-line vitest/no-hooks
   afterAll(() => {
     if (fs.existsSync(TEST_DB_PATH)) {
       fs.unlinkSync(TEST_DB_PATH);
