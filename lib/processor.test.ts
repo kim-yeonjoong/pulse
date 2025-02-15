@@ -7,21 +7,21 @@ import * as service from './service';
 import { z } from 'zod';
 
 vi.mock('./service', () => ({
-  checkStatus: vi.fn(),
-  updateResult: vi.fn(),
+  checkStatus: vi.fn<() => void>(),
+  updateResult: vi.fn<() => void>(),
 }));
 
 vi.mock('./helper', () => ({
-  readSourceFile: vi.fn(),
+  readSourceFile: vi.fn<() => void>(),
 }));
 
 vi.mock('ora', () => {
   return {
-    default: vi.fn(() => ({
-      start: vi.fn(),
-      info: vi.fn(),
-      fail: vi.fn(),
-      warn: vi.fn(),
+    default: vi.fn<() => void>(() => ({
+      start: vi.fn<() => void>(),
+      info: vi.fn<() => void>(),
+      fail: vi.fn<() => void>(),
+      warn: vi.fn<() => void>(),
     })),
   };
 });

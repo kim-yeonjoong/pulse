@@ -114,7 +114,10 @@ pnpm dlx @yeonjoong/pulse [options] [<path>]
       "name": "GitHub Home",
       "type": "http",
       "host": "https://github.com",
-      "expectedCode": 200
+      "expectedCode": 200,
+      "expectedBody": {
+        "key": "value"
+      }
     },
     {
       "name": "GitHub API",
@@ -135,6 +138,8 @@ checks:
     type: 'http'
     host: 'https://github.com'
     expectedCode: 200
+    expectedBody:
+      key: "value"
   - name: 'GitHub API'
     type: 'http'
     host: 'https://api.github.com'
@@ -152,7 +157,10 @@ checks:
         "name": "GitHub Home",
         "type": "http",
         "host": "https://github.com",
-        "expectedCode": 200
+        "expectedCode": 200,
+        "expectedBody": {
+          "key": "value"
+        }
       },
       {
         "name": "GitHub API",
@@ -169,7 +177,10 @@ checks:
         "name": "GitHub Home",
         "type": "http",
         "host": "https://github.com",
-        "expectedCode": 200
+        "expectedCode": 200,
+        "expectedBody": {
+          "key": "value"
+        }
       },
       {
         "name": "GitHub API",
@@ -191,6 +202,8 @@ checks:
       type: 'http'
       host: 'https://github.com'
       expectedCode: 200
+      expectedBody:
+        key: "value"
     - name: 'GitHub API'
       type: 'http'
       host: 'https://api.github.com'
@@ -202,6 +215,8 @@ checks:
       type: 'http'
       host: 'https://github.com'
       expectedCode: 200
+      expectedBody:
+        key: "value"
     - name: 'GitHub API'
       type: 'http'
       host: 'https://api.github.com'
@@ -228,6 +243,7 @@ checks:
 - **`data`** _(선택 사항)_: POST나 PUT 메서드의 요청 본문 또는 GET 메서드의 검색 매개변수입니다.
 - **`headers`** _(선택 사항)_: 검사에 특정한 사용자 지정 헤더입니다.
 - **`expectedCode`** _(선택 사항)_: 예상되는 HTTP 상태 코드 (예: 200).
+- **`expectedBody`** _(선택 사항)_: 예상되는 HTTP 응답 (유형: json).
 
 ## 예시
 

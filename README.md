@@ -114,7 +114,10 @@ The source file defines the checks and configurations for API monitoring. It can
       "name": "GitHub Home",
       "type": "http",
       "host": "https://github.com",
-      "expectedCode": 200
+      "expectedCode": 200,
+      "expectedBody": {
+        "key": "value"
+      }
     },
     {
       "name": "GitHub API",
@@ -135,6 +138,8 @@ checks:
     type: "http"
     host: "https://github.com"
     expectedCode: 200
+    expectedBody:
+      key: "value"
   - name: "GitHub API"
     type: "http"
     host: "https://api.github.com"
@@ -152,7 +157,10 @@ checks:
         "name": "GitHub Home",
         "type": "http",
         "host": "https://github.com",
-        "expectedCode": 200
+        "expectedCode": 200,
+        "expectedBody": {
+          "key": "value"
+        }
       },
       {
         "name": "GitHub API",
@@ -169,7 +177,10 @@ checks:
         "name": "GitHub Home",
         "type": "http",
         "host": "https://github.com",
-        "expectedCode": 200
+        "expectedCode": 200,
+        "expectedBody": {
+          "key": "value"
+        }
       },
       {
         "name": "GitHub API",
@@ -191,6 +202,8 @@ checks:
       type: "http"
       host: "https://github.com"
       expectedCode: 200
+      expectedBody:
+        key: "value"
     - name: "GitHub API"
       type: "http"
       host: "https://api.github.com"
@@ -202,6 +215,8 @@ checks:
       type: "http"
       host: "https://github.com"
       expectedCode: 200
+      expectedBody:
+        key: "value"
     - name: "GitHub API"
       type: "http"
       host: "https://api.github.com"
@@ -228,6 +243,7 @@ The source file must follow the structure validated by the schema below:
 - **`data`** *(optional)*: Request body for methods like POST or PUT / searchParams for method GET.
 - **`headers`** *(optional)*: Custom headers specific to the check.
 - **`expectedCode`** *(optional)*: The expected HTTP status code (e.g., 200).
+- **`expectedBody`** *(optional)*: The expected HTTP Response (format: json).
 
 ## Examples
 

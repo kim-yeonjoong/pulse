@@ -26,6 +26,15 @@ export default tsEslint.config(
   {
     files: ['lib/**/*.test.ts'],
     ...vitest.configs.recommended,
+    rules: {
+      ...Object.fromEntries(
+        Object.keys(vitest.configs.all.rules).map((rule) => [rule, 'error']),
+      ),
+      'vitest/prefer-to-be-truthy': 'off',
+      'vitest/prefer-to-be-falsy': 'off',
+      'vitest/consistent-test-test': 'off',
+      'vitest/max-expects': 'off',
+    },
   },
   {
     languageOptions: {
