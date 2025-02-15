@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/kim-yeonjoong/pulse/compare/v1.0.20...v1.1.0) (2025-02-15)
+
+
+### Features
+
+* add response body schema validate feature ([#141](https://github.com/kim-yeonjoong/pulse/issues/141)) ([3b7e08a](https://github.com/kim-yeonjoong/pulse/commit/3b7e08acfaf77d8595d58bc8a1cc51dbc1a87c0f))
+
 ## [1.0.20](https://github.com/kim-yeonjoong/pulse/compare/v1.0.19...v1.0.20) (2025-02-13)
 
 
