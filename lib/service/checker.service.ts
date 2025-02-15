@@ -2,6 +2,7 @@ import { isJSONObject, isNil, isNotNil } from 'es-toolkit';
 import ky, { Options } from 'ky';
 import { defu } from 'defu';
 import { getHostWithBase, replaceEnvironmentValue } from '../helper';
+import { isJsonSchemaEqual } from '../utils/is-json-schema-equal';
 
 type Adapter<T extends Omit<BaseCheck, 'type'> = BaseCheck> = (
   timeout?: number,
@@ -23,10 +24,17 @@ const createHttpAdapter: Adapter<HttpCheck> = () => {
       };
 
       const response = await ky(check.host, requestOptions);
+      const responseBody = await response.json();
+
+      let status = response.status === check.expectedCode;
+
+      if (status && isNotNil(check.expectedBody)) {
+        status = status && isJsonSchemaEqual(check.expectedBody, responseBody);
+      }
 
       return {
-        status: response.status === check.expectedCode,
-        response: await response.json(),
+        status,
+        response: responseBody,
       };
     } catch {
       return {
