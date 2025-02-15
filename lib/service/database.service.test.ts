@@ -20,6 +20,7 @@ const DUMMY_PULSE_CHECK_RESULTS = [
 ];
 
 describe.sequential('database.service', () => {
+  // eslint-disable-next-line vitest/no-hooks
   afterAll(() => {
     if (fs.existsSync(TEST_DB_PATH)) {
       fs.unlinkSync(TEST_DB_PATH);
@@ -34,7 +35,7 @@ describe.sequential('database.service', () => {
 
     await initDatabase(TEST_DB_PATH);
 
-    expect(fs.existsSync(TEST_DB_PATH)).toBeTruthy();
+    expect(fs.existsSync(TEST_DB_PATH)).toBe(true);
   });
 
   it('데이터베이스가 있으면 생성하지 않아야 한다', async () => {
@@ -42,7 +43,7 @@ describe.sequential('database.service', () => {
 
     await initDatabase(TEST_DB_PATH);
 
-    expect(fs.existsSync(TEST_DB_PATH)).toBeTruthy();
+    expect(fs.existsSync(TEST_DB_PATH)).toBe(true);
   });
 
   it('서비스 상태를 업데이트해야 한다', async () => {
@@ -134,7 +135,7 @@ describe.sequential('database.service', () => {
 
     await exportLatestResult({ OUTPUT_FILE_PATH: TEST_DB_PATH } as CliOptions);
 
-    expect(fs.existsSync(TEST_JSON_PATH)).toBeTruthy();
+    expect(fs.existsSync(TEST_JSON_PATH)).toBe(true);
 
     const exportedData = JSON.parse(
       fs.readFileSync(TEST_JSON_PATH, 'utf8'),

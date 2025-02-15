@@ -4,7 +4,7 @@ import { getSpinnerInstance } from './spinner'; // 파일 경로를 실제로 �
 
 vi.mock('ora', () => {
   return {
-    default: vi.fn(() => ({})),
+    default: vi.fn<() => void>(() => ({})),
   };
 });
 

@@ -40,7 +40,7 @@ describe.concurrent('sourceFileSchema', () => {
 
     const result = SourceFileSchema.safeParse(DUMMY);
 
-    expect(result.success).toBeTruthy();
+    expect(result.success).toBe(true);
   });
 
   it('유효한 양식의 배열인 경우 검증에 성공해야 한다', ({ expect }) => {
@@ -48,7 +48,7 @@ describe.concurrent('sourceFileSchema', () => {
 
     const result = SourceFileSchema.safeParse(ANOTHER_DUMMY);
 
-    expect(result.success).toBeTruthy();
+    expect(result.success).toBe(true);
   });
 
   it('유효하지 않은 객체의 경우 검증 실패해야 한다', ({ expect }) => {
@@ -56,7 +56,7 @@ describe.concurrent('sourceFileSchema', () => {
 
     const result = SourceFileSchema.safeParse(INVALID_DUMMY);
 
-    expect(result.success).toBeFalsy();
+    expect(result.success).toBe(false);
   });
 
   describe.concurrent('필수값이 없으면 검증에 실패해야 한다', () => {
@@ -75,7 +75,7 @@ describe.concurrent('sourceFileSchema', () => {
         ],
       });
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
 
     it('checks 가 없으면 실패해야 한다', ({ expect }) => {
@@ -87,7 +87,7 @@ describe.concurrent('sourceFileSchema', () => {
         baseHeaders: { 'x-library-name': 'pulse' },
       });
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
 
     it('checks 안에 type 이 없으면 실패해야 한다', ({ expect }) => {
@@ -105,7 +105,7 @@ describe.concurrent('sourceFileSchema', () => {
         ],
       });
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
 
     it('checks 안에 name 이 없으면 실패해야 한다', ({ expect }) => {
@@ -123,7 +123,7 @@ describe.concurrent('sourceFileSchema', () => {
         ],
       });
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
 
     it('checks 안에 host 가 없으면 실패해야 한다', ({ expect }) => {
@@ -141,7 +141,7 @@ describe.concurrent('sourceFileSchema', () => {
         ],
       });
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
 
     it('빈 객체는 실패해야 한다', ({ expect }) => {
@@ -149,7 +149,7 @@ describe.concurrent('sourceFileSchema', () => {
 
       const result = SourceFileSchema.safeParse({});
 
-      expect(result.success).toBeFalsy();
+      expect(result.success).toBe(false);
     });
   });
 
@@ -169,6 +169,6 @@ describe.concurrent('sourceFileSchema', () => {
 
     const result = SourceFileSchema.safeParse(minimalService);
 
-    expect(result.success).toBeTruthy();
+    expect(result.success).toBe(true);
   });
 });
