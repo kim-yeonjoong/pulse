@@ -14,7 +14,8 @@
     "lint": "eslint lib --config ./eslint.config.mjs --fix",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "sample": "jiti lib/index.ts sample.json"
   },
   "main": "./dist/index.js",
   "exports": {
