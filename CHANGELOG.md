@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.2](https://github.com/kim-yeonjoong/pulse/compare/v1.1.1...v1.1.2) (2025-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @libsql/client to ^0.15.2 ([#179](https://github.com/kim-yeonjoong/pulse/issues/179)) ([0e81852](https://github.com/kim-yeonjoong/pulse/commit/0e81852bbd43fa7725caf545f569fa0e4edc0e92))
+* **deps:** update dependency @libsql/client to ^0.15.4 ([#202](https://github.com/kim-yeonjoong/pulse/issues/202)) ([76b8b61](https://github.com/kim-yeonjoong/pulse/commit/76b8b61c9c22dc13da4f6e149529f31c55a8b8a0))
+* **deps:** update dependency consola to ^3.4.2 ([#181](https://github.com/kim-yeonjoong/pulse/issues/181)) ([9a5a551](https://github.com/kim-yeonjoong/pulse/commit/9a5a5518a2e3795005cd44ae1dad09f2e0ebc13f))
+* **deps:** update dependency drizzle-orm to ^0.41.0 ([#182](https://github.com/kim-yeonjoong/pulse/issues/182)) ([bde27d9](https://github.com/kim-yeonjoong/pulse/commit/bde27d906999160b2297b5f04c640fa51de027d3))
+* **deps:** update dependency es-toolkit to ^1.33.0 ([#174](https://github.com/kim-yeonjoong/pulse/issues/174)) ([d5bf151](https://github.com/kim-yeonjoong/pulse/commit/d5bf151feded4aa2aa21af6aa977f6b09d7bc1e9))
+* **deps:** update dependency es-toolkit to ^1.34.1 ([#190](https://github.com/kim-yeonjoong/pulse/issues/190)) ([121f76f](https://github.com/kim-yeonjoong/pulse/commit/121f76f16b19d21c66253c9ff68d49a93f210ed0))
+* **deps:** update dependency ky to ^1.8.0 ([#191](https://github.com/kim-yeonjoong/pulse/issues/191)) ([1d18eeb](https://github.com/kim-yeonjoong/pulse/commit/1d18eeb8690b9587c0ffa93dce5f62b2b5ab7e51))
+
 ## [1.1.1](https://github.com/kim-yeonjoong/pulse/compare/v1.1.0...v1.1.1) (2025-02-26)
 
 
