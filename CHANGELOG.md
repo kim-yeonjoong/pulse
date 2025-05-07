@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/kim-yeonjoong/pulse/compare/v1.1.2...v1.1.3) (2025-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ky to ^1.8.1 ([#204](https://github.com/kim-yeonjoong/pulse/issues/204)) ([583fc75](https://github.com/kim-yeonjoong/pulse/commit/583fc757d8dcda1d3527fed82a518f085c5b51d3))
+
 ## [1.1.2](https://github.com/kim-yeonjoong/pulse/compare/v1.1.1...v1.1.2) (2025-05-07)
 
 
