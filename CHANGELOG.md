@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/kim-yeonjoong/pulse/compare/v1.1.3...v1.1.4) (2025-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ufo to ^1.6.1 ([#196](https://github.com/kim-yeonjoong/pulse/issues/196)) ([3f24765](https://github.com/kim-yeonjoong/pulse/commit/3f24765a1a9ba4178b511555cf05368e350d283f))
+
 ## [1.1.3](https://github.com/kim-yeonjoong/pulse/compare/v1.1.2...v1.1.3) (2025-05-07)
 
 
