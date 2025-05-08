@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.5](https://github.com/kim-yeonjoong/pulse/compare/v1.1.4...v1.1.5) (2025-05-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency es-toolkit to ^1.37.2 ([#212](https://github.com/kim-yeonjoong/pulse/issues/212)) ([04fed24](https://github.com/kim-yeonjoong/pulse/commit/04fed249d29e3b711c8a4d33b932301676835c02))
+* **deps:** update dependency zod to ^3.24.4 ([#207](https://github.com/kim-yeonjoong/pulse/issues/207)) ([8efa894](https://github.com/kim-yeonjoong/pulse/commit/8efa894d7153e9eea4ca652b7393a859bf45ec5e))
+
 ## [1.1.4](https://github.com/kim-yeonjoong/pulse/compare/v1.1.3...v1.1.4) (2025-05-07)
 
 
