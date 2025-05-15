@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/kim-yeonjoong/pulse/compare/v1.1.6...v1.1.7) (2025-05-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @libsql/client to ^0.15.6 ([#220](https://github.com/kim-yeonjoong/pulse/issues/220)) ([f4c3699](https://github.com/kim-yeonjoong/pulse/commit/f4c3699dc0545f9cccb3b7d101202fd4affa7b0b))
+
 ## [1.1.6](https://github.com/kim-yeonjoong/pulse/compare/v1.1.5...v1.1.6) (2025-05-08)
 
 
