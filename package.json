@@ -1,6 +1,6 @@
 {
   "name": "@yeonjoong/pulse",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Keeping the pulse of your APIs under watch.",
   "author": "Kim YeonJoong <duswnd25@gmail.com> (https://yeonjoong.dev)",
   "type": "module",
