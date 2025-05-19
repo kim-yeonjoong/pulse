@@ -14,8 +14,14 @@ export default tsEslint.config(
   eslint.configs.recommended,
   ...tsEslint.configs.strict,
   ...tsEslint.configs.stylistic,
-  importPlugin.flatConfigs.recommended,
-  importPlugin.flatConfigs.typescript,
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      importPlugin.flatConfigs.recommended,
+      importPlugin.flatConfigs.typescript,
+    ],
+    // other configs...
+  },
   unicorn.configs['flat/recommended'],
   sonarjs.configs.recommended,
   prettier,
@@ -37,6 +43,11 @@ export default tsEslint.config(
     },
   },
   {
+    settings: {
+      'import/resolver': {
+        typescript: true,
+      },
+    },
     languageOptions: {
       globals: {
         ...globals.nodeBuiltin,
