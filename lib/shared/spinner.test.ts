@@ -8,7 +8,7 @@ vi.mock('ora', () => {
   };
 });
 
-describe.concurrent('getSpinnerInstance', () => {
+describe.concurrent('method: getSpinnerInstance', () => {
   // 생성된 인스턴스가 없다면 새로 생성해야 한다
   it('should return a new spinner instance if one does not already exist', ({
     expect,

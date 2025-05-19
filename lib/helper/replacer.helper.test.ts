@@ -7,7 +7,7 @@ process.env = {
   PULSE_TOKEN: '12345TOKEN',
 };
 
-describe.concurrent('replaceEnvironmentValue', () => {
+describe.concurrent('method: replaceEnvironmentValue', () => {
   it('문자열에서 환경 변수를 대체해야 한다', ({ expect }) => {
     expect.assertions(1);
 
@@ -39,7 +39,7 @@ describe.concurrent('replaceEnvironmentValue', () => {
   });
 });
 
-describe.concurrent('getHostWithBase', () => {
+describe.concurrent('method: getHostWithBase', () => {
   it('baseUrl 이 제공되지 않으면 그대로 반환해야 한다', ({ expect }) => {
     expect.assertions(1);
 
