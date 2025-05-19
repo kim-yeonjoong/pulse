@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.8](https://github.com/kim-yeonjoong/pulse/compare/v1.1.7...v1.1.8) (2025-05-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency commander to v14 ([#226](https://github.com/kim-yeonjoong/pulse/issues/226)) ([ca35439](https://github.com/kim-yeonjoong/pulse/commit/ca354394ef5e67620d2396f8d3104dec1f0e7c6a))
+* **deps:** update dependency confbox to ^0.2.2 ([#165](https://github.com/kim-yeonjoong/pulse/issues/165)) ([3dd734b](https://github.com/kim-yeonjoong/pulse/commit/3dd734b3cde93ae6e0c006de58b7ae75f4c73748))
+* **deps:** update dependency es-toolkit to ^1.38.0 ([#227](https://github.com/kim-yeonjoong/pulse/issues/227)) ([15f15b8](https://github.com/kim-yeonjoong/pulse/commit/15f15b85c92d546f88d351218dc73eced81311a0))
+* **deps:** update dependency zod to ^3.25.1 ([#229](https://github.com/kim-yeonjoong/pulse/issues/229)) ([3962ac7](https://github.com/kim-yeonjoong/pulse/commit/3962ac7208859cd9711d5f4202e6808e493ea5f9))
+* **deps:** update dependency zod to ^3.25.3 ([#231](https://github.com/kim-yeonjoong/pulse/issues/231)) ([ef8762c](https://github.com/kim-yeonjoong/pulse/commit/ef8762c9f81a59cd0236ed35bdde4bbdf3af010f))
+
 ## [1.1.7](https://github.com/kim-yeonjoong/pulse/compare/v1.1.6...v1.1.7) (2025-05-15)
 
 
