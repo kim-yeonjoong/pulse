@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest';
 import { isJsonSchemaEqual } from './is-json-schema-equal';
 
-describe.concurrent('isJsonSchemaEqual', () => {
+describe.concurrent('method: isJsonSchemaEqual', () => {
   it('객체가 아닌 값이 인자로 들어오면 false 를 반환해야 한다.', ({
     expect,
   }) => {

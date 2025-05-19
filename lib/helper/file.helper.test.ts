@@ -9,7 +9,7 @@ const testDirectory = 'test-directory';
 const testFilePath = 'test-directory/test.json';
 const testYAMLPath = 'test-directory/test.yaml';
 
-describe.concurrent('readSourceFile', () => {
+describe.concurrent('method: readSourceFile', () => {
   it('json 소스 파일을 올바르게 읽어야 한다', ({ expect }) => {
     expect.assertions(1);
 
@@ -46,7 +46,7 @@ describe.concurrent('readSourceFile', () => {
   });
 });
 
-describe.concurrent('getSourceFilePaths', () => {
+describe.concurrent('method: getSourceFilePaths', () => {
   it('디렉터리 경로가 주어지면 해당 디렉토리의 모든 파일 경로를 가져와야 한다', async ({
     expect,
   }) => {

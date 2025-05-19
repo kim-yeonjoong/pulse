@@ -6,7 +6,7 @@ const mockArgv = (arguments_: string[]) => {
   process.argv = ['node', 'script', ...arguments_];
 };
 
-describe.concurrent('initCli', () => {
+describe.concurrent('method: initCli', () => {
   it('기본 옵션 값들을 설정해야 한다', ({ expect }) => {
     expect.assertions(1);
 
