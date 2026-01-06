@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.9](https://github.com/kim-yeonjoong/pulse/compare/v1.1.8...v1.1.9) (2025-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @libsql/client to ^0.15.15 ([#234](https://github.com/kim-yeonjoong/pulse/issues/234)) ([f5b2c2f](https://github.com/kim-yeonjoong/pulse/commit/f5b2c2f44f22e419f7f26c9e52d48fc1642937b9))
+* **deps:** update dependency drizzle-orm to ^0.44.7 ([#241](https://github.com/kim-yeonjoong/pulse/issues/241)) ([74fabf3](https://github.com/kim-yeonjoong/pulse/commit/74fabf3d368e2fac12d5ee72054b8bfafb375b73))
+* **deps:** update dependency zod to ^3.25.76 ([#233](https://github.com/kim-yeonjoong/pulse/issues/233)) ([706b878](https://github.com/kim-yeonjoong/pulse/commit/706b878318f6050b59aaf6dbcb19e05f00f5d065))
+
 ## [1.1.8](https://github.com/kim-yeonjoong/pulse/compare/v1.1.7...v1.1.8) (2025-05-19)
 
 
