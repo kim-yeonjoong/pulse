@@ -1,10 +1,10 @@
-import { drizzle } from 'drizzle-orm/libsql';
 import { isNil } from 'es-toolkit';
 import { and, desc, eq, inArray, sql } from 'drizzle-orm';
-import fs from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { Log, Service } from '../schema';
 import { stringifyJSON } from 'confbox';
+import { DatabaseManager } from './database-manager';
 
 interface ExportLog {
   status: boolean;
@@ -19,8 +19,8 @@ type ExportJson = Record<
   }[]
 >;
 
-export const initDatabase = async (filePath: string) => {
-  const database = drizzle(`file:${filePath}`);
+export const initDatabase = async (filePath: string): Promise<void> => {
+  const database = DatabaseManager.getConnection(filePath);
 
   await database.run(`CREATE TABLE IF NOT EXISTS service (
           id TEXT PRIMARY KEY,
@@ -38,8 +38,6 @@ export const initDatabase = async (filePath: string) => {
           FOREIGN KEY (service_id) REFERENCES service (id)
         );`,
   );
-
-  database.$client.close();
 };
 
 export const updateResult = async (
@@ -47,7 +45,7 @@ export const updateResult = async (
   results: ServiceStatusResult[],
   { OUTPUT_FILE_PATH, MAX_STATUS_LOG }: CliOptions,
 ): Promise<void> => {
-  const database = drizzle(`file:${OUTPUT_FILE_PATH}`);
+  const database = DatabaseManager.getConnection(OUTPUT_FILE_PATH);
 
   for (const serviceStatus of results) {
     await database.transaction(async (transaction) => {
@@ -115,14 +113,12 @@ export const updateResult = async (
       }
     });
   }
-
-  database.$client.close();
 };
 
 export const exportLatestResult = async ({
   OUTPUT_FILE_PATH,
 }: CliOptions): Promise<void> => {
-  const database = drizzle(`file:${OUTPUT_FILE_PATH}`);
+  const database = DatabaseManager.getConnection(OUTPUT_FILE_PATH);
 
   const serviceLogs = await database
     .select({
@@ -159,5 +155,13 @@ export const exportLatestResult = async ({
     path.dirname(OUTPUT_FILE_PATH),
     path.basename(OUTPUT_FILE_PATH, path.extname(OUTPUT_FILE_PATH)) + '.json',
   );
-  fs.writeFileSync(exportFilePath, JSON.stringify(exportResult));
+  await fs.writeFile(exportFilePath, JSON.stringify(exportResult));
+};
+
+export const closeDatabase = (filePath: string): void => {
+  DatabaseManager.closeConnection(filePath);
+};
+
+export const closeAllDatabases = (): void => {
+  DatabaseManager.closeAll();
 };

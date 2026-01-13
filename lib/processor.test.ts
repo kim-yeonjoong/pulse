@@ -52,7 +52,7 @@ describe('execute 함수', () => {
   it('유효한 소스 파일은 정상처리 해야 한다', async () => {
     expect.assertions(1);
 
-    vi.mocked(readSourceFile).mockReturnValueOnce(
+    vi.mocked(readSourceFile).mockResolvedValueOnce(
       DUMMY_VALID_SOURCE as unknown as Service[],
     );
     vi.mocked(service.checkStatus).mockResolvedValue({
@@ -88,7 +88,7 @@ describe('execute 함수', () => {
   it('체크에 실패하면 오류 메시지를 출력해야 한다', async () => {
     expect.assertions(1);
 
-    vi.mocked(readSourceFile).mockReturnValueOnce(
+    vi.mocked(readSourceFile).mockResolvedValueOnce(
       DUMMY_VALID_SOURCE as unknown as Service[],
     );
     vi.mocked(service.checkStatus).mockResolvedValue({
@@ -114,7 +114,7 @@ describe('execute 함수', () => {
       },
     ] as SourceFile;
 
-    vi.mocked(readSourceFile).mockReturnValueOnce(
+    vi.mocked(readSourceFile).mockResolvedValueOnce(
       mockSource as unknown as Service[],
     );
 
@@ -125,7 +125,7 @@ describe('execute 함수', () => {
     await execute('invalid/path', { EXECUTE_CONCURRENCY: 2 } as CliOptions);
 
     expect(spinner.warn).toHaveBeenCalledWith(
-      `Invalid source file > invalid/path`,
+      `Invalid source file: invalid/path`,
     );
   });
 
@@ -139,7 +139,7 @@ describe('execute 함수', () => {
       },
     ];
 
-    vi.mocked(readSourceFile).mockReturnValueOnce(
+    vi.mocked(readSourceFile).mockResolvedValueOnce(
       mockSource as unknown as Service[],
     );
 
@@ -159,7 +159,7 @@ describe('execute 함수', () => {
     await execute('valid/path', { EXECUTE_CONCURRENCY: 1 } as CliOptions);
 
     expect(spinner.fail).toHaveBeenCalledWith(
-      'Failed to check status for Failed check: Error: Check failed',
+      'Failed to check status for Failed check',
     );
     expect(service.updateResult).toHaveBeenCalledOnce();
   });

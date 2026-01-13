@@ -2,6 +2,9 @@ import { Argument, Command, Option } from 'commander';
 import path from 'node:path';
 
 const DEFAULT_PATH = './';
+const DEFAULT_MAX_STATUS_LOG = 100;
+const DEFAULT_FILE_CONCURRENCY = 5;
+const DEFAULT_EXECUTE_CONCURRENCY = 50;
 
 export const initCli = (): CliOptions => {
   const program = new Command();
@@ -15,11 +18,11 @@ export const initCli = (): CliOptions => {
     )
     .addOption(
       new Option('-m, --max <number>', 'max count of status logs')
-        .default(100)
+        .default(DEFAULT_MAX_STATUS_LOG)
         .env('PULSE_STATUS_LOGS_MAX')
         .argParser((value) => {
           const temporary = Number.parseInt(value, 10);
-          return Number.isNaN(temporary) ? 100 : temporary;
+          return Number.isNaN(temporary) ? DEFAULT_MAX_STATUS_LOG : temporary;
         }),
     )
     .addOption(
@@ -32,11 +35,11 @@ export const initCli = (): CliOptions => {
         '-c, --concurrency <number>',
         'Concurrent file processing count',
       )
-        .default(5)
+        .default(DEFAULT_FILE_CONCURRENCY)
         .env('PULSE_FILE_CONCURRENCY')
         .argParser((value) => {
           const temporary = Number.parseInt(value, 10);
-          return Number.isNaN(temporary) ? 5 : temporary;
+          return Number.isNaN(temporary) ? DEFAULT_FILE_CONCURRENCY : temporary;
         }),
     )
     .addOption(
@@ -44,11 +47,13 @@ export const initCli = (): CliOptions => {
         '-e, --execute-concurrency <number>',
         'Concurrent status check requests per file',
       )
-        .default(50)
+        .default(DEFAULT_EXECUTE_CONCURRENCY)
         .env('PULSE_EXECUTE_CONCURRENCY')
         .argParser((value) => {
           const temporary = Number.parseInt(value, 10);
-          return Number.isNaN(temporary) ? 50 : temporary;
+          return Number.isNaN(temporary)
+            ? DEFAULT_EXECUTE_CONCURRENCY
+            : temporary;
         }),
     )
     .addOption(new Option('--json', 'Export current result to json file'))

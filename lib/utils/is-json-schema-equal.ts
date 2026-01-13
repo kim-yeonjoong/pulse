@@ -1,6 +1,6 @@
 import { isJSONObject } from 'es-toolkit';
 
-export const isJsonSchemaEqual = (
+export const isJsonStructureEqual = (
   object1: unknown,
   object2: unknown,
 ): boolean => {
@@ -27,7 +27,7 @@ export const isJsonSchemaEqual = (
     }
 
     if (isJSONObject(value1) && isJSONObject(value2)) {
-      return isJsonSchemaEqual(value1, value2);
+      return isJsonStructureEqual(value1, value2);
     }
 
     return true;

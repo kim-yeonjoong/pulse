@@ -1,4 +1,4 @@
-import { exportLatestResult, initDatabase } from './service';
+import { closeAllDatabases, exportLatestResult, initDatabase } from './service';
 import { chunk } from 'es-toolkit';
 import { execute } from './processor';
 import { consola } from 'consola';
@@ -10,7 +10,7 @@ const options = initCli();
 
 await initDatabase(options.OUTPUT_FILE_PATH);
 
-const sourceFileNames = getSourceFilePaths(options.SOURCE_PATH);
+const sourceFileNames = await getSourceFilePaths(options.SOURCE_PATH);
 
 const spinner = getSpinnerInstance().start('Checking API Pulse...');
 
@@ -29,5 +29,6 @@ try {
   // eslint-disable-next-line unicorn/no-process-exit
   process.exit(1);
 } finally {
+  closeAllDatabases();
   spinner.stop();
 }

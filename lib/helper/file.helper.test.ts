@@ -1,46 +1,46 @@
 import { describe, it, vi } from 'vitest';
-import fs, { Dirent, Stats } from 'node:fs';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { readSourceFile, getSourceFilePaths } from './file.helper';
 
-vi.mock('node:fs');
+vi.mock('node:fs/promises');
 
 const testDirectory = 'test-directory';
 const testFilePath = 'test-directory/test.json';
 const testYAMLPath = 'test-directory/test.yaml';
 
 describe.concurrent('method: readSourceFile', () => {
-  it('json 소스 파일을 올바르게 읽어야 한다', ({ expect }) => {
+  it('json 소스 파일을 올바르게 읽어야 한다', async ({ expect }) => {
     expect.assertions(1);
 
     const jsonContent = JSON.stringify({ name: 'Service 1' }, undefined, 2);
-    vi.spyOn(fs, 'readFileSync').mockReturnValueOnce(jsonContent);
+    vi.mocked(fs.readFile).mockResolvedValueOnce(jsonContent);
 
-    const services = readSourceFile(testFilePath);
+    const services = await readSourceFile(testFilePath);
 
     expect(services).toStrictEqual([{ name: 'Service 1' }]);
   });
 
-  it('json 배열 소스 파일을 올바르게 읽어야 한다', ({ expect }) => {
+  it('json 배열 소스 파일을 올바르게 읽어야 한다', async ({ expect }) => {
     expect.assertions(1);
 
     const jsonContent = JSON.stringify([{ name: 'Service 1' }], undefined, 2);
-    vi.spyOn(fs, 'readFileSync').mockReturnValueOnce(jsonContent);
+    vi.mocked(fs.readFile).mockResolvedValueOnce(jsonContent);
 
-    const services = readSourceFile(testFilePath);
+    const services = await readSourceFile(testFilePath);
 
     expect(services).toStrictEqual([{ name: 'Service 1' }]);
   });
 
-  it('yaml 소스 파일을 올바르게 읽어야 한다', ({ expect }) => {
+  it('yaml 소스 파일을 올바르게 읽어야 한다', async ({ expect }) => {
     expect.assertions(1);
 
     const yamlContent = `
     - name: Service 2
     `;
-    vi.spyOn(fs, 'readFileSync').mockReturnValueOnce(yamlContent);
+    vi.mocked(fs.readFile).mockResolvedValueOnce(yamlContent);
 
-    const services = readSourceFile(testYAMLPath);
+    const services = await readSourceFile(testYAMLPath);
 
     expect(services).toStrictEqual([{ name: 'Service 2' }]);
   });
@@ -57,31 +57,30 @@ describe.concurrent('method: getSourceFilePaths', () => {
       .filter((filePath) => path.extname(filePath))
       .map((filePath) => `${testDirectory}/${filePath}`);
 
-    vi.spyOn(fs, 'readdirSync').mockReturnValue(files as unknown as Dirent[]);
-    vi.spyOn(fs, 'statSync').mockReturnValue({
+    vi.mocked(fs.readdir).mockResolvedValueOnce(files as unknown as []);
+    vi.mocked(fs.stat).mockResolvedValueOnce({
       isFile: () => false,
-    } as Stats);
+    } as Awaited<ReturnType<typeof fs.stat>>);
 
-    const filePaths = getSourceFilePaths(testDirectory);
+    const filePaths = await getSourceFilePaths(testDirectory);
 
-    expect(fs.readdirSync).toHaveBeenCalledWith(testDirectory, {
+    expect(fs.readdir).toHaveBeenCalledWith(testDirectory, {
       encoding: 'utf8',
       recursive: true,
     });
     expect(filePaths).toStrictEqual(expected);
   });
 
-  it('파일 경로가 주어지면 해당 파일 경로를 반환해야 한다', ({ expect }) => {
+  it('파일 경로가 주어지면 해당 파일 경로를 반환해야 한다', async ({
+    expect,
+  }) => {
     expect.assertions(1);
 
-    vi.spyOn(fs, 'statSync').mockReturnValueOnce({
+    vi.mocked(fs.stat).mockResolvedValueOnce({
       isFile: () => true,
-    } as Stats);
-    vi.spyOn(path, 'join').mockImplementation((...arguments_) =>
-      arguments_.join('/'),
-    );
+    } as Awaited<ReturnType<typeof fs.stat>>);
 
-    const filePaths = getSourceFilePaths(testFilePath);
+    const filePaths = await getSourceFilePaths(testFilePath);
 
     expect(filePaths).toStrictEqual([testFilePath]);
   });

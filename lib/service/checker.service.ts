@@ -2,7 +2,7 @@ import { isJSONObject, isNil, isNotNil } from 'es-toolkit';
 import ky, { Options } from 'ky';
 import { defu } from 'defu';
 import { getHostWithBase, replaceEnvironmentValue } from '../helper';
-import { isJsonSchemaEqual } from '../utils/is-json-schema-equal';
+import { isJsonStructureEqual } from '../utils/is-json-schema-equal';
 
 type Adapter<T extends Omit<BaseCheck, 'type'> = BaseCheck> = (
   timeout?: number,
@@ -29,7 +29,8 @@ const createHttpAdapter: Adapter<HttpCheck> = () => {
       let status = response.status === check.expectedCode;
 
       if (status && isNotNil(check.expectedBody)) {
-        status = status && isJsonSchemaEqual(check.expectedBody, responseBody);
+        status =
+          status && isJsonStructureEqual(check.expectedBody, responseBody);
       }
 
       return {
@@ -51,15 +52,19 @@ export const checkStatus = <T extends Omit<BaseCheck, 'type'>>(
   service: Service,
   check: T,
 ): Promise<Awaited<ReturnType<ReturnType<Adapter>>>> => {
-  check.host = replaceEnvironmentValue(
-    getHostWithBase(check.host, service.baseUrl),
-  );
+  const processedCheck = {
+    ...check,
+    host: replaceEnvironmentValue(getHostWithBase(check.host, service.baseUrl)),
+  };
 
-  if (isHttpCheck(check)) {
-    check.headers = defu(check.headers, service.baseHeaders, {
-      'Content-Type': 'application/json',
-    });
-    return httpAdapter(check as HttpCheck);
+  if (isHttpCheck(processedCheck)) {
+    const httpCheck: HttpCheck = {
+      ...processedCheck,
+      headers: defu(processedCheck.headers, service.baseHeaders, {
+        'Content-Type': 'application/json',
+      }),
+    };
+    return httpAdapter(httpCheck);
   }
 
   throw new Error('Unsupported check type');

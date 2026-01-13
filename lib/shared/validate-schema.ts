@@ -11,7 +11,7 @@ const HttpCheckSchema = BaseCheckSchema.extend({
   data: z.object({}).passthrough().optional(),
   headers: z.object({}).catchall(z.any()).optional(),
   expectedCode: z.number().int().min(100).max(599).optional(),
-  expectedResponse: z
+  expectedBody: z
     .union([z.string(), z.object({}).catchall(z.any())])
     .optional(),
 });

@@ -8,9 +8,9 @@ declare interface HttpCheck extends BaseCheck {
   type: 'http';
   headers?: Record<string, string | undefined>;
   method?: string;
-  expectedCode: number;
+  expectedCode?: number;
   data?: string | object;
-  expectedBody?: object;
+  expectedBody?: object | string;
 }
 
 declare interface PortCheck extends BaseCheck {

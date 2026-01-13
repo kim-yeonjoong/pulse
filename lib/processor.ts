@@ -3,6 +3,7 @@ import { chunk } from 'es-toolkit';
 import { readSourceFile } from './helper';
 import { getSpinnerInstance } from './shared/spinner';
 import { SourceFileSchema } from './shared/validate-schema';
+import { NetworkError, ValidationError } from './errors';
 
 const spinner = getSpinnerInstance();
 
@@ -18,7 +19,11 @@ const processCheck = async (service: Service, check: Check) => {
 
     return { name: check.name, url: check.host, status, response };
   } catch (error) {
-    spinner.fail(`Failed to check status for ${check.name}: ${error}`);
+    const networkError = new NetworkError(
+      `Failed to check status for ${check.name}`,
+      { originalError: error, checkName: check.name, host: check.host },
+    );
+    spinner.fail(networkError.message);
 
     return {
       name: check.name,
@@ -49,12 +54,16 @@ const processService = async (
 };
 
 export const execute = async (sourceFilePath: string, options: CliOptions) => {
-  const source = readSourceFile(sourceFilePath);
+  const source = await readSourceFile(sourceFilePath);
 
   const validate = SourceFileSchema.safeParse(source);
 
   if (!validate.success) {
-    spinner.warn(`Invalid source file > ${sourceFilePath}`);
+    const validationError = new ValidationError(
+      `Invalid source file: ${sourceFilePath}`,
+      { filePath: sourceFilePath, errors: validate.error.errors },
+    );
+    spinner.warn(validationError.message);
     return;
   }
 
