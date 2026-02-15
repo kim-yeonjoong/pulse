@@ -1,11 +1,21 @@
 import ora, { Ora } from 'ora';
 
-let spinnerInstance: Ora;
+export const createSpinner = (): Ora => {
+  return ora({ prefixText: '[PULSE]', spinner: 'dots' });
+};
+
+let spinnerInstance: Ora | undefined;
 
 export const getSpinnerInstance = (): Ora => {
   if (!spinnerInstance) {
-    spinnerInstance = ora({ prefixText: '[PULSE]', spinner: 'dots' });
+    spinnerInstance = createSpinner();
   }
-
   return spinnerInstance;
+};
+
+export const resetSpinnerInstance = (): void => {
+  if (spinnerInstance) {
+    spinnerInstance.stop();
+  }
+  spinnerInstance = undefined;
 };

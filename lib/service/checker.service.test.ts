@@ -1,4 +1,4 @@
-/* eslint-disable vitest/require-mock-type-parameters */
+/* eslint-disable vitest/require-mock-type-parameters, vitest/valid-title */
 import { describe, expect, it, vi, type Mock } from 'vitest';
 import { checkStatus } from './checker.service';
 import type ky from 'ky';

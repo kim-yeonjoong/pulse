@@ -4,11 +4,16 @@ import { defu } from 'defu';
 import { getHostWithBase, replaceEnvironmentValue } from '../helper';
 import { isJsonStructureEqual } from '../utils/is-json-schema-equal';
 
+// Default HTTP request timeout (30 seconds)
+const DEFAULT_HTTP_TIMEOUT_MS = 30_000;
+
 type Adapter<T extends Omit<BaseCheck, 'type'> = BaseCheck> = (
   timeout?: number,
 ) => (service: T) => Promise<{ status: boolean; response?: unknown }>;
 
-const createHttpAdapter: Adapter<HttpCheck> = () => {
+const createHttpAdapter: Adapter<HttpCheck> = (
+  timeout = DEFAULT_HTTP_TIMEOUT_MS,
+) => {
   return async (check: HttpCheck) => {
     const data = isNil(check.data)
       ? undefined
@@ -19,6 +24,7 @@ const createHttpAdapter: Adapter<HttpCheck> = () => {
       const requestOptions: Options = {
         headers: check.headers,
         method,
+        timeout,
         throwHttpErrors: false,
         ...(method === 'GET' ? { searchParams: data } : { json: data }),
       };

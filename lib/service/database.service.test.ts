@@ -1,17 +1,20 @@
-import { afterAll, describe, expect, it } from 'vitest';
+/* eslint-disable vitest/no-hooks */
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import {
   exportLatestResult,
   initDatabase,
   updateResult,
 } from './database.service';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { drizzle } from 'drizzle-orm/libsql';
 import { Service, Log } from '../schema';
 import { eq } from 'drizzle-orm';
 
-const TEST_DB_PATH = path.join(import.meta.dirname, 'test.db');
-const TEST_JSON_PATH = path.join(import.meta.dirname, 'test.json');
+let TEST_DIR: string;
+let TEST_DB_PATH: string;
+let TEST_JSON_PATH: string;
 
 const DUMMY_SERVICE_NAME = 'Pulse';
 const DUMMY_PULSE_CHECK_RESULTS = [
@@ -20,13 +23,17 @@ const DUMMY_PULSE_CHECK_RESULTS = [
 ];
 
 describe.sequential('database.service', () => {
-  // eslint-disable-next-line vitest/no-hooks
+  beforeAll(() => {
+    // Create a temporary directory for tests
+    TEST_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pulse-test-'));
+    TEST_DB_PATH = path.join(TEST_DIR, 'test.db');
+    TEST_JSON_PATH = path.join(TEST_DIR, 'test.json');
+  });
+
   afterAll(() => {
-    if (fs.existsSync(TEST_DB_PATH)) {
-      fs.unlinkSync(TEST_DB_PATH);
-    }
-    if (fs.existsSync(TEST_JSON_PATH)) {
-      fs.unlinkSync(TEST_JSON_PATH);
+    // Clean up temporary directory
+    if (fs.existsSync(TEST_DIR)) {
+      fs.rmSync(TEST_DIR, { recursive: true, force: true });
     }
   });
 

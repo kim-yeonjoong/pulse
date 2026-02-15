@@ -92,7 +92,7 @@ export const updateResult = async (
       );
 
       if (serviceLogCount > MAX_STATUS_LOG) {
-        const targetIds = await transaction
+        const logsToDelete = await transaction
           .select({ id: Log.id })
           .from(Log)
           .where(eq(Log.service_id, serviceId))
@@ -101,15 +101,17 @@ export const updateResult = async (
           .limit(serviceLogCount - MAX_STATUS_LOG)
           .all();
 
-        await transaction
-          .delete(Log)
-          .where(
-            inArray(
-              Log.id,
-              targetIds.flatMap(({ id }) => id),
-            ),
-          )
-          .run();
+        if (logsToDelete.length > 0) {
+          await transaction
+            .delete(Log)
+            .where(
+              inArray(
+                Log.id,
+                logsToDelete.map((log) => log.id),
+              ),
+            )
+            .run();
+        }
       }
     });
   }
